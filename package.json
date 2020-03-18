@@ -1,0 +1,23 @@
+{
+  "name": "reddit-posts-extractor",
+  "version": "1.0.0",
+  "description": "Get a list of new posts from your favourite subreddit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BiswaViraj/reddit-posts-extractor.git"
+  },
+  "keywords": [
+    "reddit",
+    "reddit-api"
+  ],
+  "author": "BiswaViraj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BiswaViraj/reddit-posts-extractor/issues"
+  },
+  "homepage": "https://github.com/BiswaViraj/reddit-posts-extractor#readme"
+}
