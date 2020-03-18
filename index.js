@@ -1,4 +1,5 @@
 const snoowrap = require("snoowrap");
+const { sendPosts } = require("./telegram");
 require("dotenv").config();
 // API set-up, replace with your credentials
 const r = new snoowrap({
@@ -23,6 +24,7 @@ subreddits.map(subreddit => {
         .then(() => {
             console.log(subreddit);
             console.log(newPosts);
+            sendPosts(subreddit, newPosts);
             newPosts = [];
         });
 });
