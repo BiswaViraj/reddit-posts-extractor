@@ -13,18 +13,21 @@ const r = new snoowrap({
 let subreddits = ["cscareerquestions", "learnprogramming"];
 let newPosts = [];
 
+let delay = 3 * 60 * 60 * 1000; //3 hours
 // maps over each subreedits
 // and fetches top 20 new posts
-subreddits.map(subreddit => {
-    r.getSubreddit(subreddit)
-        .getNew({ limit: 20 })
-        .map(post => {
-            newPosts.push({ title: post.title, url: post.url });
-        })
-        .then(() => {
-            console.log(subreddit);
-            console.log(newPosts);
-            sendPosts(subreddit, newPosts);
-            newPosts = [];
-        });
-});
+setInterval(() => {
+    subreddits.map(subreddit => {
+        r.getSubreddit(subreddit)
+            .getNew({ limit: 20 })
+            .map(post => {
+                newPosts.push({ title: post.title, url: post.url });
+            })
+            .then(() => {
+                console.log(subreddit);
+                console.log(newPosts);
+                sendPosts(subreddit, newPosts);
+                newPosts = [];
+            });
+    });
+}, delay);
